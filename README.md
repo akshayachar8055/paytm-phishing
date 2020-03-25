@@ -20,6 +20,9 @@ When victim enter his credentials, you need to go to original website and use th
 4. Internet
 5. add repo on kali
 
+# Tutorial
+[(![des](https://user-images.githubusercontent.com/55870659/77065337-7b7de000-69b7-11ea-915d-4dad81d2e892.png)](https://www.youtube.com/watch?v=3TB_sISTw9U)
+
 # How to Intsall & Use
 root ---must !
 1. git clone https://github.com/Ignitetch/Paytm-Phishing.git
